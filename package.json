@@ -1,0 +1,31 @@
+{
+	"name": "url-shortener",
+	"version": "0.0.1",
+	"description": "A url shortener micro-service",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "jest"
+	},
+	"dependencies": {
+		"atob": "^2.0.3",
+		"body-parser": "^1.15.2",
+		"btoa": "^1.1.2",
+		"cookie-session": "^1.4.0",
+		"cors": "^2.8.0",
+		"dotenv": "^4.0.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.11.8",
+		"sass": "^1.30.0"
+	},
+	"engines": {
+		"node": "4.8.4"
+	},
+	"repository": {
+		"type": "git"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"jest": "^26.6.3"
+	}
+}

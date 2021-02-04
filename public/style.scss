@@ -1,0 +1,211 @@
+/****** Main Styling ******/
+
+// variables
+$bg: #fafafa;
+$white: #F1F2F2;
+$primary: #000040;
+$secondary: #1667d1;
+$submit: #1667d1;
+$submit-secondary: #0ec52d;
+$hover: #114c99;
+$border: #083d77;
+$transition: all 0.25s ease-in-out;
+
+// button mixin
+@mixin mybutton($color_1, $color_2) {
+    width: 0 auto;
+    height: auto;
+    min-height: 33px;
+    margin: 0 auto;
+    border: 2px solid $color_1;
+    border-radius: 10px;
+    //padding: 6px 24px;
+    padding: 0;
+    font-size: 1.15em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color_1;
+    background-color: $color_2;
+    transition: $transition;
+    &:hover {
+        background-color: $color_1;
+        border-color: $color_1;
+        color: $color_2;
+    }
+    &:active {
+        background-color: $color_1;
+        border-color: $color_1;
+        color: $color_2;
+        box-shadow: none;
+    }
+    &:focus,
+    &:active:focus {
+        background-color: $color_1;
+        border-color: $color_1;
+        color: $color_2;
+    }
+    &.show-copied {
+        background-color: $submit-secondary;
+        color: $color_1;
+        background-color: $color_2;
+    }
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #222;
+    background-color: $bg;
+    text-align: center;
+    line-height: 1.4em;
+    margin: 0;
+}
+
+.container {
+    padding: 0;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+.footer {
+    margin-top: 40px;
+}
+
+.user-stories {
+    position: relative;
+    text-align: justify;
+    max-width: 700px;
+    margin: 15px auto;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px;
+    color: black;
+    background-color: white;
+}
+
+ol {
+    list-style-position: outside;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.user-stories li {
+    margin-bottom: 1em;
+}
+
+a {
+    color: $primary;
+}
+
+.form {
+    margin: 0 auto;
+    width: 100%;
+    height: 20%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: $primary;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+}
+
+input {
+    font: 20px sans-serif;
+    text-indent: 10px;
+    /* Uniform text field size */
+    margin: 0 auto;
+    width: 75%;
+    height: 3.5em;
+    box-sizing: border-box;
+    /* Match form field borders */
+    border: 1px solid $border;
+    border-radius: 10px;
+}
+
+input:focus {
+    /* Additional highlight for focused elements */
+    border-color: black;
+}
+
+#url-button:hover {
+    color: #fff;
+    background-color: $hover;
+}
+
+/* container for url form nd list */
+#url-section-empty {
+    background-color: $primary;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#url-section {
+    padding-bottom: 2em;
+    background-color: $primary;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#savedurl-section {
+
+}
+
+#savedurl-list {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    .savedurl-container {
+        display: grid;
+        grid-template-columns: 50% 35% 10%;
+        text-align: left;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin: 0 auto;
+        height: 33px;
+        .savedurl-item {
+            width: auto;
+            margin: 0 auto;
+            height: 33px;
+            padding: 0px;
+        }
+        
+        // left margin for saved url text
+        p.savedurl-item {
+            margin-left: 20px;
+        }
+    }
+}
+
+#url-button {
+    @include mybutton($white, $primary);
+}
+
+.copy-button {
+    @include mybutton($white, $secondary);
+    font-size: 15px;
+}
+
+@media (min-width: 62em){
+    .savedurl-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1rem;
+    }
+    //body { display: flex; }  
+    //main { flex: 1 0 75%; }
+    //aside { flex: 1 0 25%; }  
+}
