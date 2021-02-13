@@ -139,7 +139,6 @@ input:focus {
   margin: 0 auto;
   border: 2px solid #F1F2F2;
   border-radius: 10px;
-  padding: 0;
   font-size: 1.15em;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -176,7 +175,6 @@ input:focus {
   margin: 0 auto;
   border: 2px solid #F1F2F2;
   border-radius: 10px;
-  padding: 0;
   font-size: 1.15em;
   letter-spacing: 1px;
   text-transform: uppercase;

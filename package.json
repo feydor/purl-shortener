@@ -5,7 +5,8 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js",
-		"test": "jest"
+		"test": "jest",
+    "sass": "sass public/style.scss public/style.css"
 	},
 	"dependencies": {
 		"atob": "^2.0.3",

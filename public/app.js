@@ -1,4 +1,3 @@
-// source: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 const URL = "http://localhost:8080/url";
 const GETSAVED = "http://localhost:8080/saved";
 const DOMAIN = "http://localhost:8080/";
@@ -65,7 +64,7 @@ function saveNewUrl(hash, url) {
 // get the current sessions's saved urls
 window.addEventListener("load", () => {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080/saved/");
+    xhr.open("GET", GETSAVED); 
     xhr.responseType = 'json';
     xhr.send();
     xhr.onload = function() {
@@ -92,6 +91,9 @@ window.addEventListener("load", () => {
     };
 });     
 
+/**
+ * handles submitting a url
+ */
 document.addEventListener("submit", (event) => {
     // Prevent form from submitting to the server
     event.preventDefault();
