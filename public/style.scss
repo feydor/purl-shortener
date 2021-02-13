@@ -11,6 +11,9 @@ $hover: #114c99;
 $border: #083d77;
 $transition: all 0.25s ease-in-out;
 
+$font-color: #0c4665;
+$yellow: #f6eb00;
+
 // button mixin
 @mixin mybutton($color_1, $color_2) {
     width: 0 auto;
@@ -48,6 +51,65 @@ $transition: all 0.25s ease-in-out;
         color: $color_1;
         background-color: $color_2;
     }
+}
+
+@mixin navbar() {
+  padding: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  li {
+    position: relative;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 1px 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: $font-color;
+    white-space: nowrap;
+  }
+}
+
+.navbar {
+  @include navbar() 
+}
+
+.header {
+  z-index: 997;
+  padding: 20px 0;
+  
+  .logo {
+    line-height: 0;
+  }
+
+  .logo img {
+    max-height: 40px;
+    margin-right: 6px;
+  }
+
+  .logo span {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: $font-color;
+    font-family: "Roboto", sans-serif;
+    margin-top: 3px;
+  }
+}
+
+.header.header-scrolled {
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
 body {
