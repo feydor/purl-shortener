@@ -50,6 +50,73 @@
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
+.splash {
+  margin-top: 8vh;
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+}
+.splash h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+}
+.splash .btn-get-started {
+  margin-top: 30px;
+  margin-left: 30px;
+  line-height: 0;
+  padding: 15px 40px;
+  border-radius: 4px;
+  color: #0c4665;
+  background: #f6eb00;
+  box-shadow: 0px 1px 5px #f6eb00;
+}
+.splash .btn-get-started span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.splash .btn-get-started i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.splash .btn-get-started:hover i {
+  transform: translateY(5px);
+}
+.splash .splash-img {
+  text-align: right;
+}
+@media (min-width: 1024px) {
+  .splash {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 991px) {
+  .splash {
+    height: auto;
+  }
+  .splash .splash-img {
+    text-align: center;
+    margin-top: 80px;
+  }
+  .splash .splash-img img {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .splash {
+    text-align: center;
+  }
+  .splash h1 {
+    font-size: 32px;
+  }
+  .splash .splash-img img {
+    width: 100%;
+  }
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -183,39 +250,43 @@ input:focus {
   margin-left: 20px;
 }
 
+#home-link {
+  font-size: 2rem;
+}
+
 #url-button {
   width: 0 auto;
   height: auto;
   min-height: 33px;
   margin: 0 auto;
-  border: 2px solid #F1F2F2;
+  border: 2px solid #f1f2f2;
   border-radius: 10px;
   font-size: 1.15em;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #F1F2F2;
+  color: #f1f2f2;
   background-color: #000040;
   transition: all 0.25s ease-in-out;
 }
 #url-button:hover {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #000040;
 }
 #url-button:active {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #000040;
   box-shadow: none;
 }
 #url-button:focus, #url-button:active:focus {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #000040;
 }
 #url-button.show-copied {
   background-color: #0ec52d;
-  color: #F1F2F2;
+  color: #f1f2f2;
   background-color: #000040;
 }
 
@@ -224,36 +295,40 @@ input:focus {
   height: auto;
   min-height: 33px;
   margin: 0 auto;
-  border: 2px solid #F1F2F2;
+  border: 2px solid #f1f2f2;
   border-radius: 10px;
   font-size: 1.15em;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #F1F2F2;
+  color: #f1f2f2;
   background-color: #1667d1;
   transition: all 0.25s ease-in-out;
   font-size: 15px;
 }
 .copy-button:hover {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #1667d1;
 }
 .copy-button:active {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #1667d1;
   box-shadow: none;
 }
 .copy-button:focus, .copy-button:active:focus {
-  background-color: #F1F2F2;
-  border-color: #F1F2F2;
+  background-color: #f1f2f2;
+  border-color: #f1f2f2;
   color: #1667d1;
 }
 .copy-button.show-copied {
   background-color: #0ec52d;
-  color: #F1F2F2;
+  color: #f1f2f2;
   background-color: #1667d1;
+}
+
+:root {
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 62em) {
