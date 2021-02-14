@@ -7,28 +7,29 @@
       rel="shortcut icon"
       href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico"
       type="image/x-icon"
-    />
+      />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
       type="text/css"
-    />
+      />
     <!-- Vendor CSS -->
     <link
       href="vendor/bootstrap/css/bootstrap.min.css" 
       rel="stylesheet"
-    />
+      />
     <link
       href="vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
-    />
+      />
 
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
+
     <div class="container-fluid">
-    
+      
       <header id="header" class="header fixed-top">
         <div class="container-fluid container-l d-flex align-items-center justify-content-between col-12">
 
@@ -53,7 +54,7 @@
       <section id="splash" class="splash d-flex align-items-center">
         <div class="container">
           <div class="row">
-            
+
             <div class="col-lg-6 d-flex flex-column justify-content-center">
               <h1>Shorten your links, extend your reach.</h1>
               <div class="text-center text-lg-start">
@@ -63,7 +64,7 @@
                 </a>
               </div>
             </div>
-            
+
             <div class="col-lg-6 splash-img">
               <img class="img-fluid" src="images/splash-img.png" alt="url-logo" />
             </div>
@@ -72,42 +73,39 @@
         </div>
       </section>
 
-      <main>
+    </div>
 
-        <h2>API Project: URL microservice</h2>
-        <h3>User Stories:</h3>
-        <ol class="user-stories">
-          <li>
-            The API endpoint is <code>POST [project_url]/shorten/:url</code>
-          </li>
-          <li>
-            A url string is valid if can be successfully parsed as an HTTP link.
-          </li>
-          <br />
-        </ol>
+    <main>
 
-        <h3>Example Usage:</h3>
-
-        <div id="url-section-empty">
-          <form action="/shorten" method="post" class="form" id="url-form">
-            <label for="url"></label>
-            <input type="url" id="url" name="url" value="" placeholder="Shorten your link" required>
-            <button type="submit" id="url-button">Shorten</button>
-          </form>
-          <div id="savedurl-section">
-            <ul id="savedurl-list">
-            </ul>
-          </div>
+      <div id="url-section-empty">
+        <form action="/url" method="post" class="form" id="url-form">
+          <label for="url"></label>
+          <input type="url" id="url" name="url" value="" placeholder="Shorten your link" required>
+          <button type="submit" id="url-button">Shorten</button>
+        </form>
+        <div id="savedurl-section">
+          <ul id="savedurl-list">
+          </ul>
         </div>
-        
-
-        <h3>Example Output:</h3>
-        <p>
-          <code
-            >{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code
-          >
-        </p>
       </div>
+
+      <h2>API Project: URL microservice</h2>
+      <h3>User Stories:</h3>
+      <ol class="user-stories">
+        <li>
+          The API endpoint is <code>POST [project_url]/shorten/:url</code>
+        </li>
+        <li>
+          A url string is valid if can be successfully parsed as an HTTP link.
+        </li>
+        <br />
+      </ol>
+
+
+      <h3>Example Output:</h3>
+      <p>
+        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
+      </p>
 
       <footer class="footer">
         <div class="footer-links">
@@ -124,7 +122,7 @@
               </div>
             </div>
           </div>
-       
+
           <div class="container">
             <div class="d-flex justify-content-center">
               <span>Copyright &copy; <strong>pURL</strong> 2021 Built with 
@@ -132,17 +130,12 @@
                 <a href="https://www.mongodb.com/">MongoDB</a>.
             </div>
           </div>
-        </div>
       </footer>
 
     </main>
-
-    <!-- Vender JS -->
-    <script 
-      src="vendor/bootstrap/js/bootstrap.bundle.js"
-    />
-
+    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="app.js"></script>
     <script src="nav.js"></script>
   </body>
 </html>
+
