@@ -20,24 +20,25 @@
   //     </li>
   function saveNewUrl(hash, url) {
     let savedUrlContainer = document.createElement("li");
-    savedUrlContainer.classList.add("savedurl-container");
+    savedUrlContainer.classList.add("savedurl-container",
+      "list-group-item", "d-flex", "justify-content-between", "align-items-center", "col-12");
 
     let urlText = document.createElement("p");
     // only the first 50 characters
     urlText.textContent =
       url.length > MAX_URL_LENGTH ? url.substr(0, MAX_URL_LENGTH) + "..." : url;
     urlText.id = url;
-    urlText.classList.add("savedurl-item");
+    urlText.classList.add("savedurl-item", "col-6");
     savedUrlContainer.appendChild(urlText);
 
     let urlLink = document.createElement("a");
     urlLink.textContent = hash;
     urlLink.href = hash;
-    urlLink.classList.add("savedurl-item");
+    urlLink.classList.add("savedurl-item", "col-4", "overflow-auto");
     savedUrlContainer.appendChild(urlLink);
 
     let buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("savedurl-item");
+    buttonContainer.classList.add("savedurl-item", "col-2");
 
     // add a 'click' event listener to write hash to clipboard
     let copyButton = document.createElement("button");
@@ -65,6 +66,9 @@
 
   // get the current sessions's saved urls
   window.addEventListener("load", () => {
+    // first clear the input
+    document.getElementById("url").value = "";
+
     fetch(GETSAVED)
       .then(response => response.json())
       .then(res => {
@@ -92,39 +96,6 @@
   
       })
       .catch(error => console.error(error));
-    
-
-
-    /*
-    let xhr = new XMLHttpRequest();
-    xhr.open("GET", GETSAVED);
-    xhr.responseType = "json";
-    xhr.send();
-    xhr.onload = function () {
-      if (xhr.status != 200) {
-        // analyze HTTP status of the response
-        console.error("Error: ", xhr.status);
-      } else {
-        // show the result
-        console.log(xhr.response);
-        if (xhr.response.saved.length !== 0) {
-          xhr.response.saved.forEach((curr) => {
-            // if a savedurl doesn't already exist, add it
-            if (document.getElementById(curr.url) === null) {
-              let savedurl = saveNewUrl(DOMAIN + curr.hash, curr.url);
-              console.log(savedurl);
-              URLLISTNODE.appendChild(savedurl);
-            }
-          });
-          // change container id from url-section-empty to url-section
-          // for css
-          if (document.getElementById("url-section-empty")) {
-            document.getElementById("url-section-empty").id = "url-section";
-          }
-        }
-      }
-    };
-    */
   });
 
   /**
@@ -153,7 +124,7 @@
         // if url and hash are already saved, skip adding a new url element
         // look at div with id of {url}
         if (!document.getElementById(res.url)) {
-          let savedUrlElement = saveNewUrl(DOMAIN + res.hash, res.url);
+          let savedUrlElement = saveNewUrl(DOMAIN + "url/" + res.hash, res.url);
           URLLISTNODE.appendChild(savedUrlElement);
         }
 
