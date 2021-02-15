@@ -26,7 +26,10 @@
 
 .header {
   z-index: 997;
-  padding: 20px 0;
+  padding: 20px 20px 0 20px;
+}
+.header a {
+  text-decoration: none;
 }
 .header .logo {
   line-height: 0;
@@ -46,19 +49,20 @@
 
 .header.header-scrolled {
   background: #fff;
-  padding: 15px 0;
+  padding: 15px 20px 15px 20px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
 .splash {
-  margin-top: 8vh;
   width: 100%;
   height: 80vh;
   background-size: cover;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 .splash h1 {
   margin: 0;
-  font-size: 48px;
+  font-size: 58px;
   font-weight: 700;
 }
 .splash .btn-get-started {
@@ -69,7 +73,7 @@
   border-radius: 4px;
   color: #0c4665;
   background: #f6eb00;
-  box-shadow: 0px 1px 5px #f6eb00;
+  text-decoration: none;
 }
 .splash .btn-get-started span {
   font-family: "Roboto", sans-serif;
@@ -96,6 +100,7 @@
 @media (max-width: 991px) {
   .splash {
     height: auto;
+    margin-top: 8vh;
   }
   .splash .splash-img {
     text-align: center;
@@ -110,7 +115,7 @@
     text-align: center;
   }
   .splash h1 {
-    font-size: 32px;
+    font-size: 42px;
   }
   .splash .splash-img img {
     width: 100%;
@@ -120,7 +125,7 @@
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #222;
+  color: #0c4665;
   background-color: #fafafa;
   text-align: center;
   line-height: 1.4em;
@@ -129,7 +134,6 @@ body {
 
 .container {
   padding: 0;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -141,34 +145,12 @@ h3 {
   margin-top: 30px;
 }
 
-.footer {
-  margin-top: 40px;
-}
-
-.user-stories {
-  position: relative;
-  text-align: justify;
-  max-width: 700px;
-  margin: 15px auto;
-}
-
-code {
-  font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: white;
-}
-
 ol {
   list-style-position: outside;
 }
 
 ul {
   list-style-type: none;
-}
-
-.user-stories li {
-  margin-bottom: 1em;
 }
 
 a {
@@ -181,6 +163,7 @@ a {
   height: 20%;
   padding: 1em;
   background-color: #000040;
+  background-image: linear-gradient(45deg, #000040 0%, #1667d1 100%);
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -197,11 +180,7 @@ input {
   /* Match form field borders */
   border: 1px solid #083d77;
   border-radius: 10px;
-}
-
-input:focus {
-  /* Additional highlight for focused elements */
-  border-color: black;
+  box-shadow: none;
 }
 
 #url-button:hover {
@@ -223,6 +202,13 @@ input:focus {
   margin: 0 auto;
 }
 
+#savedurl-section {
+  background-image: linear-gradient(45deg, #000040 0%, #1667d1 100%);
+}
+#savedurl-section p {
+  margin-top: 16px;
+}
+
 #savedurl-list {
   text-align: start;
   background-color: #fff;
@@ -233,7 +219,7 @@ input:focus {
 }
 
 #savedurl-item {
-  color: black;
+  color: #0c4665;
 }
 
 #home-link {
@@ -251,29 +237,30 @@ input:focus {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #f1f2f2;
-  background-color: #000040;
+  background-color: #1667d1;
   transition: all 0.25s ease-in-out;
+  background-color: transparent;
 }
 #url-button:hover {
   background-color: #f1f2f2;
   border-color: #f1f2f2;
-  color: #000040;
+  color: #1667d1;
 }
 #url-button:active {
   background-color: #f1f2f2;
   border-color: #f1f2f2;
-  color: #000040;
+  color: #1667d1;
   box-shadow: none;
 }
 #url-button:focus, #url-button:active:focus {
   background-color: #f1f2f2;
   border-color: #f1f2f2;
-  color: #000040;
+  color: #1667d1;
 }
 #url-button.show-copied {
   background-color: #0ec52d;
   color: #f1f2f2;
-  background-color: #000040;
+  background-color: #1667d1;
 }
 @media (max-width: 756px) {
   #url-button {
@@ -324,6 +311,33 @@ input:focus {
 
 :root {
   scroll-behavior: smooth;
+}
+
+#features {
+  margin-top: 6vh;
+  padding-bottom: 10vh;
+}
+#features h1, #features h2, #features h3 {
+  font-weight: 700;
+}
+#features .box {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  max-height: 366px;
+}
+
+.footer {
+  width: 100%;
+  padding-bottom: 2vh;
+  color: #fafafa;
+  background-color: #000040;
+  background-image: linear-gradient(45deg, #000040 0%, #1667d1 100%);
+}
+.footer .social-link {
+  color: #fafafa;
+  font-size: 30px;
+  margin: 10px 10px 5px 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

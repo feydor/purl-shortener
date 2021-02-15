@@ -57,6 +57,13 @@
           console.error("error: clipboard write failed");
         }
       );
+
+      // setup timer to show "Copied!" 
+      console.log(copyButton.id);
+      toggleCopied(copyButton.id);
+      setTimeout(function () {
+      toggleCopied(copyButton.id);
+      }, 3000);
     });
     buttonContainer.appendChild(copyButton);
     savedUrlContainer.appendChild(buttonContainer);
@@ -82,7 +89,7 @@
           res.saved.forEach((curr) => {
             // if a savedurl doesn't already exist, add it
             if (document.getElementById(curr.url) === null) {
-              let savedurl = saveNewUrl(DOMAIN + curr.hash, curr.url);
+              let savedurl = saveNewUrl(DOMAIN + "url/" + curr.hash, curr.url);
               console.log(savedurl);
               URLLISTNODE.appendChild(savedurl);
             }
@@ -130,7 +137,7 @@
 
         // setup copyButton css
         // onclick adds css class for 1 second (1000 ms)
-        let copyButton = document.getElementById(DOMAIN + res.hash);
+        let copyButton = document.getElementById(DOMAIN + "url/" + res.hash);
         copyButton.addEventListener("click", () => {
           copyButton.classList.add("show-copied");
           setTimeout(function () {
@@ -148,6 +155,22 @@
         console.error("Error:", error);
       });
   });
+
+  /**
+   * toggles the id's button textContent,
+   * for use in a setTimer function for 3 seconds
+   * @param {string} id - a button
+   */
+  const toggleCopied = (id) => {
+    const elem = document.getElementById(id); 
+    const currText = elem.textContent;
+
+    if (currText === "Copy") {
+      elem.textContent = "Done";
+    } else if (currText === "Done") {
+      elem.textContent = "Copy";
+    }
+  };
 
   console.log("app.js loaded!");
 })();

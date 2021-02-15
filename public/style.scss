@@ -89,7 +89,11 @@ $yellow: #f6eb00;
 
 .header {
   z-index: 997;
-  padding: 20px 0;
+  padding: 20px 20px 0 20px;
+  
+  a {
+    text-decoration: none;
+  }
 
   .logo {
     line-height: 0;
@@ -112,19 +116,20 @@ $yellow: #f6eb00;
 
 .header.header-scrolled {
   background: #fff;
-  padding: 15px 0;
+  padding: 15px 20px 15px 20px;
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
 }
 
 .splash {
-  margin-top: 8vh;
   width: 100%;
   height: 80vh;
   background-size: cover;
+  padding-left: 2vw;
+  padding-right: 2vw;
 
   h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 58px;
     font-weight: 700;
   }
 
@@ -136,20 +141,20 @@ $yellow: #f6eb00;
     border-radius: 4px;
     color: $font-color;
     background: $yellow;
-    box-shadow: 0px 1px 5px $yellow;
-  }
-
-  .btn-get-started span {
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-
-  .btn-get-started i {
-    margin-left: 5px;
-    font-size: 18px;
-    transition: 0.3s;
+    text-decoration: none;
+  
+    span {
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+  
+    i {
+      margin-left: 5px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
   }
 
   .btn-get-started:hover i {
@@ -162,12 +167,11 @@ $yellow: #f6eb00;
 
   @media (min-width: 1024px) {
     background-attachment: fixed;
-
   }
 
   @media (max-width: 991px) {
     height: auto;
-    // padding: 80px 0 60px 0;
+    margin-top: 8vh;
 
     .splash-img {
       text-align: center;
@@ -183,7 +187,7 @@ $yellow: #f6eb00;
     text-align: center;
 
     h1 {
-      font-size: 32px;
+      font-size: 42px;
     }
 
     .splash-img img {
@@ -195,7 +199,8 @@ $yellow: #f6eb00;
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #222;
+  // color: #222;
+  color: $font-color;
   background-color: $bg;
   text-align: center;
   line-height: 1.4em;
@@ -204,7 +209,6 @@ body {
 
 .container {
   padding: 0;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -216,23 +220,6 @@ h3 {
   margin-top: 30px;
 }
 
-.footer {
-  margin-top: 40px;
-}
-
-.user-stories {
-  position: relative;
-  text-align: justify;
-  max-width: 700px;
-  margin: 15px auto;
-}
-
-code {
-  font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: white;
-}
 
 ol {
   list-style-position: outside;
@@ -240,10 +227,6 @@ ol {
 
 ul {
   list-style-type: none;
-}
-
-.user-stories li {
-  margin-bottom: 1em;
 }
 
 a {
@@ -256,6 +239,11 @@ a {
   height: 20%;
   padding: 1em;
   background-color: $primary;
+  background-image: linear-gradient(
+    45deg,
+    $primary 0%,
+    $secondary 100%
+  );
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -272,11 +260,8 @@ input {
   /* Match form field borders */
   border: 1px solid $border;
   border-radius: 10px;
-}
 
-input:focus {
-  /* Additional highlight for focused elements */
-  border-color: black;
+  box-shadow: none; // remove default red border
 }
 
 #url-button:hover {
@@ -298,6 +283,18 @@ input:focus {
   margin: 0 auto;
 }
 
+#savedurl-section {
+  p {
+    margin-top: 16px; 
+  }
+
+  background-image: linear-gradient(
+    45deg,
+    $primary 0%,
+    $secondary 100%
+  );
+  
+}
 
 #savedurl-list {
   text-align: start;
@@ -309,7 +306,7 @@ input:focus {
 }
 
 #savedurl-item {
-  color: black;
+  color: $font-color;
 }
 
 #home-link {
@@ -317,7 +314,8 @@ input:focus {
 }
 
 #url-button {
-  @include mybutton($white, $primary);
+  @include mybutton($white, $secondary);
+  background-color: transparent;
 }
 
 .copy-button {
@@ -326,4 +324,40 @@ input:focus {
 
 :root {
   scroll-behavior: smooth;
+}
+
+#features {
+  margin-top: 6vh;
+  padding-bottom: 10vh;
+
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+
+  .box {
+    padding: 30px;
+    box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+    text-align: center;
+    max-height: 366px; 
+  }
+
+  
+}
+
+.footer {
+  width: 100%;
+  padding-bottom: 2vh;
+  color: $bg;
+  background-color: $primary;
+  background-image: linear-gradient(
+    45deg,
+    $primary 0%,
+    $secondary 100%
+  );
+
+  .social-link {
+    color: $bg;
+    font-size: 30px;
+    margin: 10px 10px 5px 10px;
+  }
 }
