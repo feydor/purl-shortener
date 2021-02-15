@@ -1,7 +1,7 @@
 {
   "name": "url-shortener",
   "version": "0.0.1",
-  "description": "A url shortener micro-service",
+  "description": "A url shortener webapp.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -22,7 +22,7 @@
     "sass": "^1.30.0"
   },
   "engines": {
-    "node": "4.8.4"
+    "node": ">=14.15.5"
   },
   "repository": {
     "type": "git"
