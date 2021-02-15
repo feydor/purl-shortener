@@ -1,7 +1,8 @@
 (function() {
-  const URL = "http://localhost:8080/url";
-  const GETSAVED = "http://localhost:8080/saved";
-  const DOMAIN = "http://localhost:8080/";
+  // const DOMAIN = "http://localhost:8080/";
+  const DOMAIN = "http://p-url.herokuapp.com/";
+  const URL = DOMAIN + "url";
+  const GETSAVED = DOMAIN + "saved";
   const INPUTNODE = document.getElementById("url");
   const URLLISTNODE = document.getElementById("savedurl-list");
   const MAX_URL_LENGTH = 45;
