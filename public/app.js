@@ -1,6 +1,6 @@
 (function() {
   // const DOMAIN = "http://localhost:8080/";
-  const DOMAIN = "http://p-url.herokuapp.com/";
+  const DOMAIN = "https://p-url.herokuapp.com/";
   const URL = DOMAIN + "url";
   const GETSAVED = DOMAIN + "saved";
   const INPUTNODE = document.getElementById("url");
