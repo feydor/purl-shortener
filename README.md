@@ -1,21 +1,94 @@
-# API Project: Timestamp Microservice for FCC
+![](./public/images/logo.png)
 
-### User stories:
+<p align="center">
+  <a href="https://github.com/feydor/purl-shortener/commits/master" target="_blank">
+    <img src="https://img.shields.io/github/last-commit/feydor/purl-shortener?style=flat-square" alt="GitHub last commit">
+  </a>
 
-[![Run on Repl.it](https://repl.it/badge/github/freeCodeCamp/boilerplate-project-timestamp)](https://repl.it/github/freeCodeCamp/boilerplate-project-timestamp)
+  <a href="https://standardjs.com" target="_blank">
+    <img alt="ESLint" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square">
+  </a>
 
-1. The API endpoint is `GET [project_url]/api/timestamp/:date_string?`
-2. A date string is valid if can be successfully parsed by `new Date(date_string)` (JS) . Note that the unix timestamp needs to be an **integer** (not a string) specifying **milliseconds**. In our test we will use date strings compliant with ISO-8601 (e.g. `"2016-11-20"`) because this will ensure an UTC timestamp.
-3. If the date string is **empty** it should be equivalent to trigger `new Date()`, i.e. the service uses the current timestamp.
-4. If the date string is **valid** the api returns a JSON having the structure
-   `{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }`
-   e.g. `{"unix": 1479663089000 ,"utc": "Sun, 20 Nov 2016 17:31:29 GMT"}`.
-5. If the date string is **invalid** the api returns a JSON having the structure `{"error" : "Invalid Date" }`.
+  <a href="https://github.com/feydor/purl-shortener/blob/master/LICENSE" target="_blank">
+    <img alt="LICENSE" src="https://img.shields.io/github/license/feydor/purl-shortener?style=flat-square&color=yellow">
+    </a>
+</p>
 
-#### Example usage:
+<hr>
 
-- https://Timestamp-Microservice--freecodecamp.repl.co/api/timestamp/2015-12-25 \*https://Timestamp-Microservice--freecodecamp.repl.co/api/timestamp/1451001600000
+An Express.js webapp that provides collision-free url hashing to shorten links for sharing.
 
-#### Example output:
+<p align="center">
+  <img alt='logo name' src='./public/images/favicon.ico'>
+</p>
 
-- {"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}
+# Table of contents
+
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Development](#development)
+    - [Codebase](#codebase)
+      - [Technologies](#technologies)
+      - [Folder Structure](#folderstructure)
+- [License](#license)
+- [Footer](#footer)
+
+# Usage
+
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=p-url&path=https://p-url.herokuapp.com/&style=flat)
+
+# Screenshots
+
+![](./examples/usage.png)
+
+# Installation
+
+Clone this repository, navigate into the project folder, and build the dependencies by executing:
+```sh
+npm install
+```
+After installing the dependencies, start the app by executing:
+```sh
+npm start
+```
+To develop, set the appropriate environment variables in .env:
+```sh
+connectionString=mongodb+srv://dev:<password>@cluster0.rn8t3.mongodb.net/<dbname>?retryWrites=true&w=majority
+PORT=8080
+```
+
+# Development
+## Codebase
+### Technologies
+
+Technologies used in this mono repo include:
+- Full-stack JavaScript: Backend uses Node.js, frontend is in plain JS.
+- ExpressJS: RESTful api
+- MongoDB: NoSQL database
+- Sass: CSS framework
+- Bootstrap: CSS and HTML framework
+- Prettier: JS code style formatter
+- Jest: Testing framework
+
+### Folder structure
+
+```sh
+purl-shortener/
+├── examples   # screenshots and assorted images
+├── models     # MongoDB schemas, models, and pre-hooks
+├── public     # Public files used on the frontend
+│   ├── images              # images, logos, favicons
+│   ├── javascripts         # JavaScript code 
+│   ├── stylesheets         # Sass and CSS sources 
+│   └── vendor              # Bootstrap and Bootstrap-icons
+├── tests      # Jest tests
+├── views      # Html
+└── server.js  # backend entrypoint
+```
+
+# License
+MIT, see the [LICENSE](./LICENSE) file.
+
+# Footer
+

@@ -1,12 +1,13 @@
 {
-  "name": "url-shortener",
+  "name": "purl-shortener",
   "version": "0.0.1",
   "description": "A url shortener webapp.",
+  "author": "Victor Reyes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "jest",
-    "sass": "sass public/style.scss public/style.css",
+    "sass": "sass public/stylesheets/style.scss public/stylesheets/style.css",
     "format": "npx prettier --write ."
   },
   "dependencies": {

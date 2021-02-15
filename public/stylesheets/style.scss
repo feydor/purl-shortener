@@ -171,11 +171,12 @@ $yellow: #f6eb00;
 
   @media (max-width: 991px) {
     height: auto;
-    margin-top: 8vh;
+    margin-top: 12vh;
+    margin-bottom: 2vh;
 
     .splash-img {
       text-align: center;
-      margin-top: 80px;
+      margin-top: 4vh;
     }
 
     .splash-img img {
@@ -328,7 +329,7 @@ input {
 
 #features {
   margin-top: 6vh;
-  padding-bottom: 10vh;
+  padding-bottom: 6vh;
 
   h1, h2, h3 {
     font-weight: 700;
