@@ -1,6 +1,9 @@
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../stylesheets/style.scss"
+
 (function() {
-  // const DOMAIN = "http://localhost:8080/";
-  const DOMAIN = "https://p-url.herokuapp.com/";
+  const DOMAIN = process.env.DOMAIN || "https://localhost:8080/";
   const URL = DOMAIN + "url";
   const GETSAVED = DOMAIN + "saved";
   const INPUTNODE = document.getElementById("url");
@@ -173,5 +176,5 @@
     }
   };
 
-  console.log("app.js loaded!");
+  console.log("main.js loaded!");
 })();

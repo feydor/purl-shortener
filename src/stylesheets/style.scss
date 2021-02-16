@@ -321,6 +321,12 @@ input {
 
 .copy-button {
   @include mybutton($white, $secondary);
+  @media (max-width: 768px) {
+    font-size: 0.8rem; 
+  }
+  @media (max-width: 360px) {
+    font-size: 0.6rem; 
+  }
 }
 
 :root {

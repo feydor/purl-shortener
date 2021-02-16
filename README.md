@@ -1,4 +1,6 @@
-![](./public/images/logo.png)
+<div align="center">
+  ![](./public/images/logo.png)
+</div>
 
 <p align="center">
   <a href="https://github.com/feydor/purl-shortener/commits/master" target="_blank">
@@ -32,11 +34,10 @@ An Express.js webapp that provides collision-free url hashing to shorten links f
       - [Technologies](#technologies)
       - [Folder Structure](#folderstructure)
 - [License](#license)
-- [Footer](#footer)
 
 # Usage
 
-![Heroku](https://pyheroku-badge.herokuapp.com/?app=p-url&path=https://p-url.herokuapp.com/&style=flat)
+[![Heroku](http://heroku-badge.herokuapp.com/?app=p-url&style=flat&svg=1&root=index.html)]
 
 # Screenshots
 
@@ -48,14 +49,19 @@ Clone this repository, navigate into the project folder, and build the dependenc
 ```sh
 npm install
 ```
-After installing the dependencies, start the app by executing:
+After installing the dependencies, build the app by executing:
+```sh
+npm build
+```
+Finally run it by executing:
 ```sh
 npm start
 ```
-To develop, set the appropriate environment variables in .env:
+By default a development server will start at ![]("http://localhost:8080"). To develop, set the appropriate environment variables in .env:
 ```sh
-connectionString=mongodb+srv://dev:<password>@cluster0.rn8t3.mongodb.net/<dbname>?retryWrites=true&w=majority
-PORT=8080
+connectionString='mongodb+srv://dev:<password>@cluster0.rn8t3.mongodb.net/<dbname>?retryWrites=true&w=majority'
+PORT='8080'
+DOMAIN='localhost:8080'
 ```
 
 # Development
@@ -68,6 +74,7 @@ Technologies used in this mono repo include:
 - MongoDB: NoSQL database
 - Sass: CSS framework
 - Bootstrap: CSS and HTML framework
+- Parcel: Web application bundler
 - Prettier: JS code style formatter
 - Jest: Testing framework
 
@@ -75,20 +82,18 @@ Technologies used in this mono repo include:
 
 ```sh
 purl-shortener/
-├── examples   # screenshots and assorted images
+├── dist       # Compiled files
+├── examples   # Screenshots and assorted images
 ├── models     # MongoDB schemas, models, and pre-hooks
 ├── public     # Public files used on the frontend
-│   ├── images              # images, logos, favicons
+│   ├── images              # Images, logos, favicons
 │   ├── javascripts         # JavaScript code 
 │   ├── stylesheets         # Sass and CSS sources 
-│   └── vendor              # Bootstrap and Bootstrap-icons
+│   ├── vendor              # Bootstrap-icons 
+│   └── views               # HTML
 ├── tests      # Jest tests
-├── views      # Html
 └── server.js  # backend entrypoint
 ```
 
 # License
 MIT, see the [LICENSE](./LICENSE) file.
-
-# Footer
-
