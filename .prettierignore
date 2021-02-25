@@ -1,4 +1,6 @@
 node_modules
+dist
 .*
 *.html
-public/vendor
+src/vendor
+src/images

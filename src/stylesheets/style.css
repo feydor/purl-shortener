@@ -252,7 +252,8 @@ input {
   color: #1667d1;
   box-shadow: none;
 }
-#url-button:focus, #url-button:active:focus {
+#url-button:focus,
+#url-button:active:focus {
   background-color: #f1f2f2;
   border-color: #f1f2f2;
   color: #1667d1;
@@ -293,7 +294,8 @@ input {
   color: #1667d1;
   box-shadow: none;
 }
-.copy-button:focus, .copy-button:active:focus {
+.copy-button:focus,
+.copy-button:active:focus {
   background-color: #f1f2f2;
   border-color: #f1f2f2;
   color: #1667d1;
@@ -317,7 +319,9 @@ input {
   margin-top: 6vh;
   padding-bottom: 10vh;
 }
-#features h1, #features h2, #features h3 {
+#features h1,
+#features h2,
+#features h3 {
   font-weight: 700;
 }
 #features .box {
