@@ -27,7 +27,6 @@ An Express.js webapp that provides collision-free url hashing to shorten links f
 [(Back to top)](#table-of-contents)
 
 ![Go to live version.](https://p-url.herokuapp.com/)
-![Heroku](https://heroku-badges.herokuapp.com/?app=p-url&root=index.html)
 
 # Screenshots
 [(Back to top)](#table-of-contents)
