@@ -20,6 +20,7 @@ An Express.js webapp that provides collision-free url hashing to shorten links f
   - [Codebase](#codebase)
     - [Technologies](#technologies)
     - [Folder Structure](#folder-structure)
+  - [Design Overview](#design-overview)
 - [License](#license)
 
 # Live Version
@@ -29,10 +30,12 @@ An Express.js webapp that provides collision-free url hashing to shorten links f
 ![Go to live version.](https://p-url.herokuapp.com/)
 
 # Screenshots
+[(Back to top)](#table-of-contents)
 
 ![](./examples/usage.png)
 
 # Installation
+[(Back to top)](#table-of-contents)
 
 Clone this repository, navigate into the project folder, and build the dependencies by executing:
 
@@ -63,6 +66,7 @@ DOMAIN='localhost:8080'
 ```
 
 # Development
+[(Back to top)](#table-of-contents)
 
 ## Codebase
 
@@ -80,6 +84,7 @@ Technologies used in this mono repo include:
 - Jest: Testing framework
 
 ### Folder structure
+[(Back to top)](#table-of-contents)
 
 ```sh
 purl-shortener/
@@ -96,6 +101,12 @@ purl-shortener/
 └── server.js  # backend entrypoint
 ```
 
+## Design Overview
+[(Back to top)](#table-of-contents)
+
+
+
 # License
+[(Back to top)](#table-of-contents)
 
 MIT, see the [LICENSE](./LICENSE) file.

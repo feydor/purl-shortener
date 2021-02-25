@@ -24,6 +24,7 @@
     "cors": "^2.8.0",
     "dotenv": "^4.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.10.0",
     "jquery": "^3.5.1",
     "mongoose": "^5.11.8",
     "prettier": "^2.2.1",
