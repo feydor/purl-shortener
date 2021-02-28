@@ -104,7 +104,10 @@ purl-shortener/
 ## Design Overview
 [(Back to top)](#table-of-contents)
 
+### base64 encoding
+Upon request a url is saved in a Url collection with a datestamp and an id. The id is sourced from a seperate Counter collection that is independently incremented in a pre-save hook. The url's id is used to send back a base64-encoded ascii string. Whenever a url is requested, the hash, the encoded ascii string, is decoded and the resulting id is used to retrieve the url.
 
+Since binary to base64-encoded ascii (btoa) is a one-to-one function, its output's size increases linearlly with input size. Using a counter as the source binary is what gives the resulting hash it's 'shortening' quality. Collisions are not a problem in this encoding scheme.
 
 # License
 [(Back to top)](#table-of-contents)
